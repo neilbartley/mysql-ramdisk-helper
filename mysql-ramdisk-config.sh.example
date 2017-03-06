@@ -1,0 +1,35 @@
+#!/bin/bash
+
+###############################################################################
+# Configuration
+
+# How big should the ramdisk be?
+RAMDISK_SIZE_MB=1024
+
+# Where should the ramdisk be mounted?
+RAMDISK_MOUNT_POINT=/Volumes
+
+# Options for MySQL daemon.
+MYSQLD_OPTIONS=""
+
+# These options are pretty dangerous, don't use them if you care about your data!
+#MYSQLD_OPTIONS="--innodb_file_per_table=ON \
+#                --innodb_flush_log_at_trx_commit=0 \
+#                --innodb_buffer_pool_size=2048M \
+#                --innodb_log_file_size=64M \
+#                --innodb_flush_method=O_DSYNC \
+#                --skip-sync-frm=OFF \
+#                --table_open_cache=250 \
+#                --character-set-server=utf8 \
+#                --collation-server=utf8_general_ci"
+
+# The root password will be set to this.
+MYSQL_ROOT_PASSWORD=supersecretpassword
+
+# The commands which should be run to setup the test DB.
+ENVIRONMENT_SETUP_COMMANDS="RAILS_ENV=test rake db:setup db:migrate && \
+                            rake parallel:create && \
+                            rake parallel:prepare"
+
+# End configuration
+###############################################################################
