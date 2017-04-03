@@ -9,6 +9,11 @@ RAMDISK_SIZE_MB=1024
 # Where should the ramdisk be mounted?
 RAMDISK_MOUNT_POINT=/Volumes
 
+# Where is mysql? Usually default is fine unless you have a (for example)
+# keg installed (macOS). In which case `which mysql` then omit from bin
+# onwards.
+MYSQL_PATH="/usr/local"
+
 # Options for MySQL daemon.
 MYSQLD_OPTIONS=""
 
