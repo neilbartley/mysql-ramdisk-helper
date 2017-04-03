@@ -18,15 +18,15 @@ MYSQL_PATH="/usr/local"
 MYSQLD_OPTIONS=""
 
 # These options are pretty dangerous, don't use them if you care about your data!
-#MYSQLD_OPTIONS="--innodb_file_per_table=ON \
-#                --innodb_flush_log_at_trx_commit=0 \
-#                --innodb_buffer_pool_size=2048M \
-#                --innodb_log_file_size=64M \
-#                --innodb_flush_method=O_DSYNC \
-#                --skip-sync-frm=OFF \
-#                --table_open_cache=250 \
-#                --character-set-server=utf8 \
-#                --collation-server=utf8_general_ci"
+MYSQLD_OPTIONS="--innodb_file_per_table=ON \
+                --innodb_flush_log_at_trx_commit=0 \
+                --innodb_buffer_pool_size=2048M \
+                --innodb_log_file_size=64M \
+                --innodb_flush_method=O_DSYNC \
+                --skip-sync-frm=OFF \
+                --table_open_cache=250 \
+                --character-set-server=utf8 \
+                --collation-server=utf8_general_ci"
 
 # The root password will be set to this.
 MYSQL_ROOT_PASSWORD=supersecretpassword
